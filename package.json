@@ -1,60 +1,27 @@
 {
-  "name": "dinesh-penikalapati",
-  "version": "2.0.0",
-  "description": "This is my portfolio website",
-  "main": "index.js",
+  "name": "r3f-vite-starter",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "start": "webpack-dev-server .",
-    "build": "webpack ."
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dckumar24/dineshpenikalapati.in.git"
-  },
-  "keywords": [
-    "dinesh",
-    "penikalapati",
-    "dinesh",
-    "penikalapati",
-    "React",
-    "js",
-    "Javascript",
-    "sass",
-    "web",
-    "developer"
-  ],
-  "author": "Dinesh Kumar Penikalapati",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dckumar24/dineshpenikalapati.in/issues"
-  },
-  "homepage": "https://github.com/dckumar24/dineshpenikalapati.in#readme",
   "dependencies": {
-    "express": "^4.18.2",
-    "firebase": "^9.22.1",
+    "@react-three/drei": "^9.68.6",
+    "@react-three/fiber": "^8.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.11.2"
+    "three": "^0.146.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.21.5",
-    "@babel/core": "^7.22.1",
-    "@babel/preset-env": "^7.22.2",
-    "@babel/preset-react": "^7.22.3",
-    "@typescript-eslint/eslint-plugin": "^5.59.7",
-    "@typescript-eslint/parser": "^5.59.7",
-    "babel-loader": "^9.1.2",
-    "css-loader": "^6.8.1",
-    "eslint": "^8.41.0",
-    "eslint-plugin-react": "^7.32.2",
-    "html-loader": "^4.2.0",
-    "html-webpack-plugin": "^5.5.1",
-    "mini-css-extract-plugin": "^2.7.6",
-    "nodemon": "^2.0.22",
-    "sass-loader": "^13.3.1",
-    "style-loader": "^3.3.3",
-    "webpack-cli": "^5.1.1",
-    "webpack-dev-server": "^4.15.0",
-    "weebpack": "^1.0.1"
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2",
+    "vite": "^4.1.0"
   }
 }

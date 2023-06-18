@@ -1,0 +1,16 @@
+.card{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    /* display: flex;
+    flex-direction: row; */
+    width:30rem;
+
+    justify-content: center;
+    align-items: center;
+    color:black;
+    font-weight: bolder;
+}
+.title, .desc {
+    text-align: center;
+    
+}
