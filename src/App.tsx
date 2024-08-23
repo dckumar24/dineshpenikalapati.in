@@ -1,9 +1,10 @@
+import VariantA from "./components/templates/VariantA/VariantA"
 
 function App() {
 
   return (
     <>
-    <h1>Dinesh Portfolio 2024</h1>
+   <VariantA></VariantA>
     </>
   )
 }
