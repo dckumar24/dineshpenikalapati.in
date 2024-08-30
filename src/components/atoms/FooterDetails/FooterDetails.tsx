@@ -1,3 +1,4 @@
+
 const FooterDetailsWrapper:React.ElementType='div';
 
 interface FooterDetailsProps{
@@ -6,7 +7,7 @@ interface FooterDetailsProps{
 }
 
 const FooterDetails=({content,year}:FooterDetailsProps):JSX.Element=>{
-    return <FooterDetailsWrapper>
+    return <FooterDetailsWrapper className="font-bold font-mono flex items-center justify-center">
         <p>{content} @{year}</p>
     </FooterDetailsWrapper>
 }

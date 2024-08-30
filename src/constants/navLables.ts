@@ -4,5 +4,5 @@ export const NAVLABELS:string[]=[
     "My Projects",
     "Education",
     "Hobbies",
-    "404: Page not found 😁"
+    "404 😁"
 ]
