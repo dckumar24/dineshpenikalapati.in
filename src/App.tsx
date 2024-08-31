@@ -11,7 +11,7 @@ function App() {
   return (
     
     <AppWrapper className={theme==='dark'?'bg-black text-white':'bg-white text-black'}>
-   <VariantA></VariantA>
+        <VariantA></VariantA>
     </AppWrapper>
  
   )
