@@ -8,7 +8,7 @@ const BannerInfoWrapper:React.ElementType='div';
 
 
 const BannerInfo=():JSX.Element=>{
-    return <BannerInfoWrapper className="xl:w-6/12 lg:w-6/12 lg:ml-0 flex items-center justify-start flex-col p-4 pl-1  font-bold font-mono text-left w-1/2 2xl:w-1/2 ">
+    return <BannerInfoWrapper className="xl:w-6/12 sm:w-6/12 sm:ml-0 flex items-center justify-start flex-col p-4 pl-1  font-bold font-mono text-left w-1/2 2xl:w-1/2 ">
             <BannerGreet greet={profileData.bannerGreet}></BannerGreet>
             <BannerTitle title={profileData.bannerTitle}/>
             <BannerCaption caption={profileData.bannerCaption}></BannerCaption>

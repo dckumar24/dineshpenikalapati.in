@@ -10,9 +10,9 @@ const NavLinksWrapper:React.ElementType='div';
 const NavBar=()=>{
 
     const {homeRef,skillsRef,experienceRef,educationRef}=useContext(RefsContext)
-    return  <NavBarWrapper className="flex flex-col items-center justify-center h-screen w-full">
+    return  <NavBarWrapper className="flex flex-row items-center sm:flex sm:flex-col  sm:w-screen   sm:items-center sm:justify-center sm:h-screen">
         <NavTitle></NavTitle>
-        <NavLinksWrapper className="flex flex-col items-center justify-evenly w-full h-screen ">
+        <NavLinksWrapper className="flex w-full h-full justify-start m-2 item-center sm:flex-col sm:items-center sm:justify-evenly sm:w-full sm:h-screen">
             <NavLink label={<FaHouseChimney className="size-6 "></FaHouseChimney>} refLink={ homeRef} ></NavLink>
             <NavLink label={<FaLaptopCode className="size-6 "></FaLaptopCode>} refLink={skillsRef} ></NavLink>
             <NavLink label={<FaBriefcase className="size-6 "></FaBriefcase>} refLink={experienceRef} ></NavLink>

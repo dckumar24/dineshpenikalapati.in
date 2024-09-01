@@ -28,7 +28,7 @@ const SkillsSection=()=>{
     initial="hidden"
     animate={control}
     >
-       <SkillsSectionWrapper  className="h-1/2 flex justify-between">
+       <SkillsSectionWrapper  className=" flex flex-col justify-start sm:h-1/2 sm:flex sm:flex-row sm:justify-between">
         <SkillRows></SkillRows>
        <RoboChat></RoboChat>
     </SkillsSectionWrapper>

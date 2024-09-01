@@ -9,7 +9,7 @@ const bb8Animation={
 
 
 const HeroSection=():JSX.Element=>{
-    return <HerpoSectionWrapper className='w-full h-screen flex items-center justify-center'>
+    return <HerpoSectionWrapper className='w-full h-full items-center justify-center sm:h-screen flex sm:items-center sm:justify-center'>
         <motion.svg 
         
         initial={{x:0}}

@@ -32,13 +32,13 @@ const ExpEduSection=({sectionTitle,orgs,imgLogo,alignFlag}:ExpEduSectionProps)=>
     variants={boxVariant}
     initial="hidden"
     animate={control}
-    ><ExpEduSectionWrapper id={!alignFlag?'experience':'education'} ref={!alignFlag?experienceRef:educationRef} className={`h-full flex flex-col items-stretch justify-center my-10`}>
+    ><ExpEduSectionWrapper id={!alignFlag?'experience':'education'} ref={!alignFlag?experienceRef:educationRef} className={`p-4 h-full flex items-stretch justify-center sm:h-full sm:flex sm:flex-col sm:items-stretch sm:justify-center sm:p-0 sm:my-10`}>
         
-        <div className={`flex justify-between ${alignFlag?'flex-row-reverse':''}`}>
-            <div className="w-5/12 flex items-center justify-center">
-              <img src={imgLogo} className="w-3/4 h-full"></img>
+        <div className={`sm:flex w-full sm:m-0 sm:justify-between ${alignFlag?'sm:flex-row-reverse':''}`}>
+            <div className="m-4 sm:m-4 sm:w-5/12 sm:flex sm:items-center sm:justify-center">
+              <img src={imgLogo} className="sm:w-3/4 sm:h-full"></img>
             </div>
-            <div className="w-7/12 flex  flex-col items-stretch justify-center">
+            <div className="sm:w-7/12 sm:flex  sm:flex-col sm:items-stretch sm:justify-center">
             <SectionTitle sectionTitle={sectionTitle}></SectionTitle>
             {
                 orgs.map((org,index)=><ExpTile orgName={org.orgName} roles={org.roles} location={org.location} key={`exp-${org.orgName}-${index}`} ></ExpTile>)

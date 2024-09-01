@@ -2,7 +2,7 @@ import NavBar from "../../molecules/NavBar/NavBar";
 
 const HeaderWrapper:React.ElementType='div';
 const Header=()=>{
-    return <HeaderWrapper className=" h-screen fixed left-0 flex items-start w-1/12">
+    return <HeaderWrapper className="w-screen sm:h-screen sm:fixed sm:left-0 sm:flex sm:items-start sm:w-1/12 z-90">
         <NavBar></NavBar>
     </HeaderWrapper>
 }

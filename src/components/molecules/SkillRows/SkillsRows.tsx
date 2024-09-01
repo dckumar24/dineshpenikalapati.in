@@ -31,11 +31,11 @@ const SkillRowsWrapper:React.ElementType='div';
 const SkillRows=()=>{
 
   const {skillsRef}=useContext(RefsContext)
-    return <SkillRowsWrapper className="w-8/12">
+    return <SkillRowsWrapper className=" sm:w-8/12 sm:h-auto">
 
       <SkillRowsWrapper ref={skillsRef}>
         <SectionTitle sectionTitle="Technologies and Tools"></SectionTitle>
-        <SkillRowsWrapper className="flex items-center justify-between p-4">
+        <SkillRowsWrapper className=" flex items-center justify-between p-4 sm:flex sm:items-center sm:justify-between sm:p-4">
             <SkillLogo skillLogo={reactLogo} {...skillsInfo.react} ></SkillLogo>
             <SkillLogo skillLogo={reduxLogo} {...skillsInfo.redux}></SkillLogo>
             <SkillLogo skillLogo={javaScript} {...skillsInfo.javascript}></SkillLogo>
@@ -44,7 +44,7 @@ const SkillRows=()=>{
             <SkillLogo skillLogo={tailwindCss} {...skillsInfo.tailwind}></SkillLogo>
 
         </SkillRowsWrapper>
-        <SkillRowsWrapper className="flex items-center justify-between p-4">
+        <SkillRowsWrapper className=" flex items-center justify-between p-4 sm:flex sm:items-center sm:justify-between sm:p-4">
             
             <SkillLogo skillLogo={sassLogo} {...skillsInfo.sass}></SkillLogo>
             <SkillLogo skillLogo={htmlLogo} {...skillsInfo.html}></SkillLogo>
@@ -53,7 +53,7 @@ const SkillRows=()=>{
             <SkillLogo skillLogo={reactTL}  {...skillsInfo.reactTestingLibrary}></SkillLogo>
             <SkillLogo skillLogo={webpackLogo} {...skillsInfo.webpack}></SkillLogo>
         </SkillRowsWrapper>
-        <SkillRowsWrapper className="flex items-center justify-between p-4">
+        <SkillRowsWrapper className="flex items-center justify-between p-4 sm:flex sm:items-center sm:justify-between sm:p-4">
             <SkillLogo skillLogo={npmLogo} {...skillsInfo.npm}></SkillLogo>
             <SkillLogo skillLogo={gitLogo} {...skillsInfo.git}></SkillLogo>
             <SkillLogo skillLogo={postman} {...skillsInfo.postman}></SkillLogo>

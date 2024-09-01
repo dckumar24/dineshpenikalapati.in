@@ -4,7 +4,7 @@ interface AboutTitleProps{
 }
 
 const AboutTitle=({aboutTitle}:AboutTitleProps)=>{
-    return <AboutTitleWrapper className="p-4">
+    return <AboutTitleWrapper className="mb-4 sm:p-4 sm:mb-0">
         <p className="text-3xl">{aboutTitle}</p>
     </AboutTitleWrapper>
 }

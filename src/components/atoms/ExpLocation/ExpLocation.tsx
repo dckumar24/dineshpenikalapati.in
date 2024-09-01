@@ -5,7 +5,7 @@ interface ExpLocationProps{
 }
 
 const ExpLocation=({location}:ExpLocationProps)=>{
-    return <ExpLocationWrapper className="text-lg font-bold">
+    return <ExpLocationWrapper className="text-md text-slate-300 font-bold">
         <p>{location}</p>
     </ExpLocationWrapper>
 }

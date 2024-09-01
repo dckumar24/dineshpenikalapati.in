@@ -9,7 +9,7 @@ import { RoboChatProvider } from "../../../context/RoboCharContext";
 
 const HomeWrapper:React.ElementType='div';
 const Home=():JSX.Element=>{
-    return <HomeWrapper className="w-full p-4">
+    return <HomeWrapper className="w-full sm:w-full sm:p-4">
         <Banner/>
         <About/>
         <RoboChatProvider>

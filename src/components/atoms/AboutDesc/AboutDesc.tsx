@@ -5,8 +5,8 @@ interface AboutDescProps{
 }
 
 const AboutDesc=({aboutDesc}:AboutDescProps)=>{
-    return <AboutDescWrapper className="pl-4">
-        <p className="text-sm">{aboutDesc}</p>
+    return <AboutDescWrapper className="text-justify text-sm sm:text-lg sm:pl-4">
+        <p >{aboutDesc}</p>
     </AboutDescWrapper>
 }
 
