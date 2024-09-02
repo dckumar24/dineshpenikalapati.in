@@ -10,13 +10,13 @@ const TempalteMainComponentWrapper:React.ElementType='div'
 
 const VariantA=()=>{
 
-    return <TemplateAWrapper  className="z-20 absolute"> 
+    return <TemplateAWrapper  className="app"> 
 
         <TemplateLayoutWrapper className="flex flex-col sm:flex sm:flex-row">
             <Header></Header>
             <DarkModeSwitch></DarkModeSwitch>
             <TempalteMainComponentWrapper  className="w-full sm:w-full sm:m-0 sm:ml-14 lg:ml-24 xl:ml-28 2xl:ml-32">
-                <Home></Home>
+                <Home ></Home>
             </TempalteMainComponentWrapper>
             
         </TemplateLayoutWrapper>

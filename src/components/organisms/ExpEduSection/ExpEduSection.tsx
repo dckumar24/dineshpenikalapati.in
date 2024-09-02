@@ -32,7 +32,7 @@ const ExpEduSection=({sectionTitle,orgs,imgLogo,alignFlag}:ExpEduSectionProps)=>
     variants={boxVariant}
     initial="hidden"
     animate={control}
-    ><ExpEduSectionWrapper id={!alignFlag?'experience':'education'} ref={!alignFlag?experienceRef:educationRef} className={`p-4 h-full flex items-stretch justify-center sm:h-full sm:flex sm:flex-col sm:items-stretch sm:justify-center sm:p-0 sm:my-10`}>
+    ><ExpEduSectionWrapper id={!alignFlag?'experience':'education'} ref={!alignFlag?experienceRef:educationRef} className={`p-4 h-full flex items-stretch justify-center sm:h-full sm:flex sm:flex-col sm:items-stretch sm:justify-center sm:p-0 sm:my-10 `}>
         
         <div className={`sm:flex w-full sm:m-0 sm:justify-between ${alignFlag?'sm:flex-row-reverse':''}`}>
             <div className="m-4 sm:m-4 sm:w-5/12 sm:flex sm:items-center sm:justify-center">

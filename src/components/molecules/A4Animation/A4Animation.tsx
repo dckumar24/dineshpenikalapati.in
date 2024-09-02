@@ -66,10 +66,10 @@ export default function A4Animation() {
           className="flex items-center justify-center sm:flex sm:items-center sm:justify-center"
         >
           <div className="my-2 flex justify-around w-1/2 space-4 rounded-full bg-slate-100  text-slate-700 sm:mt-2 sm:flex sm:space-x-4 sm:rounded-full sm:bg-slate-100 sm:px-8 sm:text-slate-700">
-            <strong>B</strong>
-            <span className="font-italic">I</span>
-            <span className="underline">U</span>
-            <strong className="underline">A</strong>
+            
+            <span className="font-italic">{`▶️`}</span>
+            <span className="font-italic">{`⏯️`}</span>
+            <strong className="font-italic">🟥</strong>
           </div>
         </motion.div>
         <motion.span
