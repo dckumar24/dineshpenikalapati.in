@@ -8,7 +8,7 @@ import { isMobile } from "../../../utils";
 const SkillsSectionWrapper:React.ElementType='div';
 const boxVariant = {
     visible: { opacity: 1, y:isMobile() ? -200:0, transition: { duration: 0.5 } },
-    hidden: { opacity: 0, y:isMobile() ? -100:-100}
+    hidden: { opacity: 0, y:isMobile() ? 100:150}
   };
 
 const SkillsSection=()=>{

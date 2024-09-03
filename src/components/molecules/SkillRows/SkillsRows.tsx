@@ -37,12 +37,12 @@ const SkillRows=()=>{
       <SkillRowsWrapper ref={skillsRef} className="relative">
       <motion.div
         initial={{x:0}}
-    animate={{x:isMobile() ? -200:300}}
+    animate={{x:isMobile() ? 250:280}}
         transition={{duration:1,repeat:Infinity,repeatType:'reverse',
         ease: "backInOut",
 
         }}
-        className="absolute top-0 left-64 w-10 h-10 z-0  bg-orange-500 opacity-50  rounded-full "
+        className={`absolute ${isMobile()?`top-0 left-10`:`top-0 left-64 `} w-10 h-10 z-0  bg-orange-500 opacity-50  rounded-full `}
         >
                 
 
