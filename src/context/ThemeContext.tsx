@@ -6,7 +6,7 @@ interface ThemeContextType{
 }
 
 const ThemeContext=createContext<ThemeContextType>({
-    theme:'dark',
+    theme:'light',
     toggleTheme:()=>{}
 });
 
@@ -18,7 +18,7 @@ interface ThemeProviderProps{
 
 const ThemeProvider=({children}:ThemeProviderProps)=>{
 
-    const [theme,setTheme]=useState('dark')
+    const [theme,setTheme]=useState('light')
 
     const toggleTheme=()=>{
         setTheme((prevTheme)=>(prevTheme==='dark'?'light':'dark'))

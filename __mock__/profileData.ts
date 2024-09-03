@@ -6,7 +6,7 @@ export const profileData={
     bannerCaption:'Frontend Developer',
     bannerDesc:'I am a frontend developer working with',
     bannerSkills:'ReactJS, JavaScript, SaSS..',
-    footerNote:'Developed by DC with ❤️ and ⌨️',
+    footerNote:'Developed by Dinesh with ❤️ and ⌨️',
     footerYear:2024
 
 }

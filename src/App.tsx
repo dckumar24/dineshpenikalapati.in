@@ -11,7 +11,7 @@ function App() {
 
   return (
     
-    <AppWrapper className={theme==='dark'?' bg-black text-white':' text-black bg-white'}>
+    <AppWrapper className={theme==='dark'?' bg-[#1e1e1e] text-white':' text-black bg-slate-100'}>
 
         <VariantA ></VariantA> 
         

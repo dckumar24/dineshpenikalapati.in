@@ -7,7 +7,7 @@ interface FooterDetailsProps{
 }
 
 const FooterDetails=({content,year}:FooterDetailsProps):JSX.Element=>{
-    return <FooterDetailsWrapper className="font-bold font-mono flex items-center justify-center">
+    return <FooterDetailsWrapper className="font-bold font-mono flex items-center justify-center text-sm sm:text-lg">
         <p>{content} @{year}</p>
     </FooterDetailsWrapper>
 }

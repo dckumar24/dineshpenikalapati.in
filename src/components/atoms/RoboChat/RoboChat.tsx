@@ -23,7 +23,7 @@ const RoboChat=()=>{
         animate={{opacity:1,y:0,scale:1 }}
         transition={{duration:0.5}}
 
-        className={` w-full h-full min-h-[150px] border-4 rounded-2xl border-slate-700 p-4 ${theme==='dark'?'bg-black text-white shadow-lg shadow-yellow-100':'bg-black text-white shadow-lg shadow-slate-600'}`}>
+        className={` w-full h-full min-h-[150px] rounded-2xl p-4 ${theme==='dark'?'bg-black text-white shadow-lg shadow-black':'bg-black text-white shadow-lg shadow-slate-600'}`}>
         <p className='text-lg sm:text-2xl font-bold mb-4 underline text-orange-500'>{title}</p>
         <p className='text-sm text-justify'>{desc}</p>
     </motion.div>}

@@ -8,7 +8,7 @@ const NavTitle=()=>{
 
     const {theme}=useContext(ThemeContext)
     return <NavTitleWrapper className='w-1/5 h-full m-2 sm:w-auto sm:h-auto sm:m-0'>
-        <img src={theme=='light'?signBlack:signLogo} className={`font-serif font-bold h-full w-full sm:pt-4 sm:text-xl sm:relative sm:top-0 sm:left-7 ${theme=='light'?"sm:w-10/12":"sm:w-full"}`}></img>
+        <img src={theme=='light'?signBlack:signLogo} className={`font-serif font-bold h-full w-full sm:pt-4 sm:text-xl sm:ml-4 sm:left-7 ${theme=='light'?"sm:w-10/12":"sm:w-full"}`}></img>
         </NavTitleWrapper>
 }
 
