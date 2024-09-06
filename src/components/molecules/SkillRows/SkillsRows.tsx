@@ -1,5 +1,4 @@
 import SkillLogo from "../../atoms/SkillLogo/SkillLogo";
-import {motion} from 'framer-motion'
 import { 
   reactLogo,
   reduxLogo,
@@ -35,19 +34,8 @@ const SkillRows=()=>{
     return <SkillRowsWrapper className=" sm:w-8/12 sm:h-auto">
 
       <SkillRowsWrapper ref={skillsRef} className="relative">
-      <motion.div
-        initial={{x:0}}
-    animate={{x:isMobile() ? 250:280}}
-        transition={{duration:1,repeat:Infinity,repeatType:'reverse',
-        ease: "backInOut",
-
-        }}
-        className={`absolute ${isMobile()?`top-0 left-10`:`top-0 left-64 `} w-10 h-10 z-0  bg-orange-500 opacity-50  rounded-full `}
-        >
-                
-
-        </motion.div>
-        <SectionTitle sectionTitle="Technologies and Tools"></SectionTitle>
+    
+        <SectionTitle sectionTitle="Technologies and Tools" xValue={isMobile() ? 260:270}></SectionTitle>
         <SkillRowsWrapper className=" flex items-center justify-between p-4 sm:flex sm:items-center sm:justify-between sm:p-4">
             <SkillLogo skillLogo={reactLogo} {...skillsInfo.react} ></SkillLogo>
             <SkillLogo skillLogo={reduxLogo} {...skillsInfo.redux}></SkillLogo>

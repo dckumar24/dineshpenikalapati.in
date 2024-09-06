@@ -42,22 +42,8 @@ const ExpEduSection=({sectionTitle,orgs,imgLogo,alignFlag}:ExpEduSectionProps)=>
               <img src={imgLogo} className="sm:w-3/4 sm:h-full"></img>
             </div>
             <div className={`relative sm:w-7/12 sm:flex  sm:flex-col sm:items-stretch sm:justify-center ${theme!=='dark'?`${alignFlag?`bg-[#92E3A9]`:`bg-[#FFB986]`} my-10 rounded-2xl shadow-md shadow-stone-900 text-black`:`${alignFlag?`bg-[#263238]`:`bg-[#263238]`} my-10 rounded-2xl shadow-md shadow-black text-black`}}  ${isMobile()?`my-0 p-2`:``}`}>
-            <motion.div
-        initial={{x:0}}
-    animate={{x:alignFlag?100:190}}
-        transition={{
-          duration:1,
-          repeat:Infinity,
-          repeatType:'reverse',
-        ease: "circInOut",
-
-        }}
-        className={`absolute ${alignFlag?`${isMobile()?`top-5 left-28`:`top-6 left-72`} bg-[#d77631]`:` ${isMobile()?`top-5 left-16`:`top-10 left-60`}  bg-[#37d664]`}  w-10 h-10   opacity-60  rounded-full `}
-        >
-                
-
-        </motion.div>
-            <SectionTitle sectionTitle={sectionTitle}></SectionTitle>
+          
+            <SectionTitle sectionTitle={sectionTitle} xValue={isMobile() ? alignFlag?100:180:alignFlag?100:180}></SectionTitle>
             {
                 orgs.map((org,index)=><ExpTile orgName={org.orgName} roles={org.roles} location={org.location} key={`exp-${org.orgName}-${index}`} ></ExpTile>)
             }

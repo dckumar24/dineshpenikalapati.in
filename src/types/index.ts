@@ -4,7 +4,8 @@ export interface Roles{
 }
  
 export interface SectionTitleProps{
-    sectionTitle:string
+    sectionTitle:string,
+    xValue:number
 }
 
 export interface ExpTileProps{
