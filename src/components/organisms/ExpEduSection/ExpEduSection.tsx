@@ -16,7 +16,7 @@ const boxVariant = {
   };
 
 
-const ExpEduSection=({sectionTitle,orgs,imgLogo,alignFlag}:ExpEduSectionProps)=>{
+const ExpEduSection=({sectionTitle,orgs,imgLogo,alignFlag,xValue}:ExpEduSectionProps)=>{
 
 
     const {experienceRef,educationRef}=useContext(RefsContext)
@@ -43,7 +43,7 @@ const ExpEduSection=({sectionTitle,orgs,imgLogo,alignFlag}:ExpEduSectionProps)=>
             </div>
             <div className={`relative sm:w-7/12 sm:flex  sm:flex-col sm:items-stretch sm:justify-center ${theme!=='dark'?`${alignFlag?`bg-[#92E3A9]`:`bg-[#FFB986]`} my-10 rounded-2xl shadow-md shadow-stone-900 text-black`:`${alignFlag?`bg-[#263238]`:`bg-[#263238]`} my-10 rounded-2xl shadow-md shadow-black text-black`}}  ${isMobile()?`my-0 p-2`:``}`}>
           
-            <SectionTitle sectionTitle={sectionTitle} xValue={isMobile() ? alignFlag?100:180:alignFlag?100:180}></SectionTitle>
+            <SectionTitle sectionTitle={sectionTitle} xValue={xValue}></SectionTitle>
             {
                 orgs.map((org,index)=><ExpTile orgName={org.orgName} roles={org.roles} location={org.location} key={`exp-${org.orgName}-${index}`} ></ExpTile>)
             }
