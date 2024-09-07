@@ -1,7 +1,6 @@
 import {motion} from "framer-motion"
 import logoBg from '../../../assets/logoBg.png'
 
-import './AboutImg.css'
 
 const AboutImg=()=>{
 

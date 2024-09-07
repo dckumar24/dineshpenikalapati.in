@@ -15,7 +15,7 @@ const AboutProfileDetails=()=>{
     return<AboutProfileDetailsWrapper className={`${isMobile()?`mt-10`:``} w-full p-4 flex flex-col items-start justify-center sm:w-10/12 sm:flex sm:flex-col sm:items-start sm:justify-center z-40 ${theme==="light"?`bg-yellow-300 rounded-2xl shadow-lg shadow-stone-500`:`bg-purple-900 shadow-xl rounded-2xl shadow-black`}`} >
         
         <AboutTitle aboutTitle="Biography"/>
-        <AboutDesc aboutDesc="I'm a Freelancer Front-end Developer with over 3 years of experience. I'm from San Francisco. I code and create web elements for amazing people around the world. I like work with new people. New people new Experiences."/>
+        <AboutDesc aboutDesc="I’m Dinesh Kumar Penikalapati, an experienced Frontend Developer with 5 years of expertise in building dynamic and high-performance web applications. My primary focus is on leveraging technologies such as React.js, Redux, JavaScript, TypeScript, SASS, and more to craft responsive and scalable user interfaces."/>
         <AboutProfileTable></AboutProfileTable>
 
     </AboutProfileDetailsWrapper>

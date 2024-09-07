@@ -37,10 +37,10 @@ const AboutTitle=({aboutTitle}:AboutTitleProps)=>{
                 
                     className={`flex justify-between`}>
                          <div className="w-8 h-8 ml-4 bg-transparent   shadow-md shadow-black">
-                            <img className="" src={linkedInLogo} alt=""></img>
+                          <a href='https://www.linkedin.com/in/penikalapatidineshkumar/' target='_blank'><img className="" src={linkedInLogo} alt="linkedin logo" ></img></a>  
                         </div>
                         <div className="w-8 h-8 ml-4 bg-white rounded-full shadow-md shadow-black">
-                            <img src={githubLogo} alt=""></img>
+                            <a href='https://github.com/dckumar24' target='_blank'><img src={githubLogo} alt="github logo"></img></a>
                         </div>
                        
                     </motion.div>
@@ -48,10 +48,10 @@ const AboutTitle=({aboutTitle}:AboutTitleProps)=>{
                 
                     className="flex justify-between">
                         <div className="w-8 h-8 ml-4  rounded-full bg-transparent  shadow-md shadow-black">
-                            <img src={redditLogo} alt=""></img>
+                           <a href='https://www.reddit.com/user/dc0439/' target='_blank'> <img src={redditLogo} alt="reddit logo"></img></a>
                         </div>
                         <div className="w-8 h-8 ml-4 bg-transparent  rounded-full shadow-md shadow-black ">
-                            <img className="rounded-full" src={twitterLogo} alt=""></img>
+                            <a href='https://x.com/90sSapien' target='_blank'><img className="rounded-full" src={twitterLogo} alt="twitter logo"></img></a>
                         </div>
                     </motion.div>
                 </motion.div>

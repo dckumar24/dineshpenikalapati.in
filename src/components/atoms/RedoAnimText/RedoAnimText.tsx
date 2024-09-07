@@ -9,15 +9,11 @@ export interface IRedoAnimTextProps {
 export default function RedoAnimText({ delay }: IRedoAnimTextProps) {
   const textIndex = useMotionValue(0);
   const texts = [
-    "I am writing to you because I want a job.",
-    "I am the best candidate for this job.",
-    "In my grand adventure as a seasoned designer...",
-    "Knock knock! Who's there? Your new employee!",
-    "Walking the tightrope balance of project management...",
-    "I find myself compelled to express my interest due to...",
-    "My pen (or should I say, keyboard) is at work today because...",
-    "Inspired by the alluring challenge in the job posting, I am writing...",
-    "Stirred to my keyboard by the tantalizing nature of the role…"
+    "Experienced Frontend Developer with 5 years of expertise in React.js, Redux, JavaScript, TypeScript, SASS, Webpack and more.",
+    "Experienced in Agile development and leveraging Git Copilot within organizational privacy guidelines.",
+    "Expert in crafting responsive, scalable React components, leveraging service workers for web push notifications and optimizing performance through strategic API response caching.",
+    "Specialized in developing scalable, high-performance micro frontend applications, with deep expertise in API orchestration, AEM and analytics calls integrations.",
+    "Adept at collaborating with cross-functional teams, including UX, QA, API, analytics teams, and product owners"
   ];
 
   const baseText = useTransform(textIndex, (latest) => texts[latest] || "");
@@ -29,7 +25,7 @@ export default function RedoAnimText({ delay }: IRedoAnimTextProps) {
   const updatedThisRound = useMotionValue(true);
 
   useEffect(() => {
-    animate(count, 60, {
+    animate(count, 180, {
       type: "tween",
       delay: delay,
       duration: 1,
@@ -53,5 +49,5 @@ export default function RedoAnimText({ delay }: IRedoAnimTextProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <motion.span className="inline">{displayText}</motion.span>;
+  return <motion.span className="inline text-md text-zinc-400">{displayText}</motion.span>;
 }
