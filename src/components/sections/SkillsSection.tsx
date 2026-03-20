@@ -88,7 +88,7 @@ export default function SkillsSection() {
             </div>
 
             {/* Skill list */}
-            <div className="space-y-2 max-h-[400px] overflow-y-auto pr-2">
+            <div className="space-y-2 max-h-[400px] overflow-y-auto overflow-x-hidden pr-2">
               {filtered.map((skill, i) => (
                 <motion.div
                   key={skill.name}
