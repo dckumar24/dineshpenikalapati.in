@@ -1,24 +1,44 @@
-import { useContext } from "react";
-import VariantA from "./components/templates/VariantA/VariantA"
-import { ThemeContext } from "./context/ThemeContext";
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import { useEffect } from 'react'
+import { useCursor } from './hooks/useCursor'
+import Navbar from './components/ui/Navbar'
+import Footer from './components/ui/Footer'
+import HeroSection from './components/sections/HeroSection'
+import AboutSection from './components/sections/AboutSection'
+import SkillsSection from './components/sections/SkillsSection'
+import ExperienceSection from './components/sections/ExperienceSection'
+import EducationSection from './components/sections/EducationSection'
+import ProjectsSection from './components/sections/ProjectsSection'
+import ContactSection from './components/sections/ContactSection'
 
-const AppWrapper:React.ElementType='div';
+export default function App() {
+  const { cursorRef, ringRef } = useCursor()
 
-function App() {
-
-  const {theme}=useContext(ThemeContext)
-
+  // Hide default cursor on mount
+  useEffect(() => {
+    document.body.style.cursor = 'none'
+    return () => { document.body.style.cursor = 'auto' }
+  }, [])
 
   return (
-    
-    <AppWrapper className={theme==='dark'?' bg-[#1e1e1e] text-white':' text-black bg-slate-100'}>
-<SpeedInsights></SpeedInsights>
-        <VariantA ></VariantA> 
-        
-    </AppWrapper>
- 
+    <>
+      {/* Custom cursor */}
+      <div ref={cursorRef} className="custom-cursor" />
+      <div ref={ringRef} className="custom-cursor-ring" />
+
+      {/* App */}
+      <div className="relative bg-[#020408] min-h-screen">
+        <Navbar />
+        <main>
+          <HeroSection />
+          <AboutSection />
+          <SkillsSection />
+          <ExperienceSection />
+          <ProjectsSection />
+          <EducationSection />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
+    </>
   )
 }
-
-export default App
