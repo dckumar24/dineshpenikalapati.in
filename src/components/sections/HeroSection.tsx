@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import ParticleField from '../three/ParticleField'
 import FloatingGeometry from '../three/FloatingGeometry'
 import { profileData } from '../../data/portfolio'
-import yourPhoto from '../../../assets/myphoto_nobg.png'
+import yourPhoto from '../../../assets/myphoto_nobg.webp'
 
 const roles = [
   'Senior Frontend Developer',

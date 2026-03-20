@@ -56,16 +56,7 @@ export default function ProjectsSection() {
                     </span>
                   </div>
                 </div>
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="font-mono text-xs text-gray-500 hover:text-white transition-colors"
-                  >
-                    ↗ LIVE
-                  </a>
-                )}
+                
               </div>
 
               <h3 className="font-orbitron font-bold text-lg text-white mb-3 group-hover:text-[#00f5ff] transition-colors duration-300">
