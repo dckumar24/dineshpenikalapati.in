@@ -1,0 +1,142 @@
+export const profileData = {
+  name: 'Dinesh Kumar',
+  lastName: 'Penikalapati',
+  title: 'Senior Frontend Developer',
+  subtitle: 'React · TypeScript · Nx · Three.js',
+  bio: "I'm a Senior Frontend Developer with 6+ years of experience crafting enterprise-scale web applications. I specialise in React 19, TypeScript, Zustand, and Nx monorepo architectures across healthcare and BFS domains. I leverage AI-assisted tools like GitHub Copilot and Windsurf IDE to ship faster, higher-quality code.",
+  location: 'Hyderabad, Telangana, India',
+  email: 'dineshpenikalapati@gmail.com',
+  phone: '+91 8790351056',
+  linkedin: 'https://www.linkedin.com/in/dineshpenikalapati/',
+  github: 'https://github.com/dckumar24',
+  website: 'https://dineshpenikalapati.in/',
+  twitter: 'https://x.com/90sSapien',
+}
+
+export const skills = [
+  { name: 'React', description: 'Modern UI library with hooks, context, and component-based architecture for building interactive web applications', category: 'Framework', color: '#61dafb' },
+  { name: 'TypeScript', description: 'Strongly-typed JavaScript superset for building scalable applications with compile-time type safety and better IDE support', category: 'Language', color: '#3178c6' },
+  { name: 'JavaScript', description: 'Core language expertise spanning ES6+, closures, prototypal inheritance, async patterns, and DOM manipulation', category: 'Language', color: '#f7df1e' },
+  { name: 'Zustand', description: 'Lightweight state management library with minimal boilerplate and excellent TypeScript integration', category: 'State', color: '#00f5ff' },
+  { name: 'Redux', description: 'Predictable state container with middleware support, time-travel debugging, and complex state management patterns', category: 'State', color: '#764abc' },
+  { name: 'Nx Monorepo', description: 'Workspace management system for scaling applications with code generation, dependency graph visualization, and task orchestration', category: 'Architecture', color: '#00ff9f' },
+  { name: 'Vite', description: 'Next-gen frontend build tool with instant HMR, optimized production builds, and excellent development experience', category: 'Build', color: '#bd34fe' },
+  { name: 'Webpack', description: 'Powerful module bundler with module federation, code splitting, and extensive plugin ecosystem for advanced bundling scenarios', category: 'Build', color: '#8dd6f9' },
+  { name: 'Tailwind CSS', description: 'Utility-first CSS framework enabling rapid UI development with responsive design and customizable component system', category: 'Styling', color: '#38bdf8' },
+  { name: 'SASS/SCSS', description: 'CSS preprocessor with variables, nesting, mixins, and functions for maintainable and scalable stylesheets', category: 'Styling', color: '#cf649a' },
+  { name: 'Vitest', description: 'Blazing fast unit testing framework with Vite integration, excellent TypeScript support, and instant feedback during development', category: 'Testing', color: '#6e9f18' },
+  { name: 'React Testing Lib', description: 'User-centric testing library promoting best practices and accessibility-first testing of React components', category: 'Testing', color: '#ff4154' },
+  { name: 'GraphQL', description: 'Query language and runtime for APIs enabling efficient data fetching, real-time subscriptions, and schema-driven development', category: 'API', color: '#e10098' },
+  { name: 'RESTful APIs', description: 'REST architecture expertise including resource design, HTTP methods, status codes, and API integration patterns', category: 'API', color: '#ff00aa' },
+  { name: 'GitHub Copilot', description: 'AI-powered code assistant leveraging large language models for intelligent code completion and generation', category: 'AI Tools', color: '#ffe600' },
+  { name: 'Three.js / R3F', description: 'WebGL abstraction libraries for creating immersive 3D graphics, animations, and spatial visualizations in the browser', category: 'Creative', color: '#00f5ff' },
+  { name: 'Python', description: 'General-purpose language for scripting, automation, data processing, and backend development with extensive libraries', category: 'Language', color: '#3572A5' },
+  { name: 'Git', description: 'Version control mastery including branching strategies, rebasing, squashing, and collaborative workflows for team development', category: 'Tools', color: '#f05032' },
+]
+
+export const experiences = [
+  {
+    company: 'Infosys',
+    role: 'Frontend Developer — Consultant',
+    period: 'Aug 2025 – Present',
+    location: 'Bangalore, India',
+    domain: 'Healthcare',
+    color: '#00f5ff',
+    highlights: [
+      'Leading offshore frontend team for a large-scale pharmacy drug management system',
+      'Built drug search & compound medication features with type-ahead using React 19, TypeScript & Zustand',
+      'Published Drug Search Provider package to JFrog Artifactory enabling cross-team reuse',
+      'Integrated RESTful APIs for real-time inventory, NDC management & prescription workflows',
+      'Improved test coverage to 85%+ using Vitest & React Testing Library in Nx monorepo',
+    ],
+    stack: ['React 19', 'TypeScript', 'Zustand', 'Nx', 'Vite', 'Vitest', 'RTL', 'JFrog'],
+  },
+  {
+    company: 'Cognizant',
+    role: 'Frontend Developer — Associate',
+    period: 'Jan 2022 – Aug 2025',
+    location: 'Hyderabad, India',
+    domain: 'Banking & Financial Services',
+    color: '#ff00aa',
+    highlights: [
+      'Built Notification Center UI aggregating product-level notifications with GraphQL & micro-frontend architecture',
+      'Developed modular Alert Widget using React + Webpack Module Federation for cross-app integration',
+      'Created Alert Management Dashboard with React Router for email, SMS & push notification preferences',
+      'Integrated AEM content for multilingual support; added analytics for customer insights',
+      'Wrote comprehensive unit test suites using Jest & React Testing Library',
+    ],
+    stack: ['React', 'TypeScript', 'Webpack MF', 'GraphQL', 'AEM', 'SASS', 'Jest', 'RTL', 'Context API'],
+  },
+  {
+    company: 'Tata Consultancy Services',
+    role: 'Frontend Developer — System Engineer',
+    period: 'Sep 2019 – Jan 2022',
+    location: 'Hyderabad, India',
+    domain: 'Banking & Financial Services',
+    color: '#ffe600',
+    highlights: [
+      'Developed Learning Module Trends UI with React, JavaScript and CSS',
+      'Integrated Chart.js for data visualisation of trend analytics from API endpoints',
+      'Consumed API data across multiple components using React Context API',
+    ],
+    stack: ['React', 'JavaScript', 'CSS', 'Chart.js', 'Context API'],
+  },
+]
+
+export const projects = [
+  {
+    title: 'Pharmacy Drug Management System',
+    description: 'Enterprise-scale pharmacy platform supporting drug dispensing, inventory management, and prescription workflows. Built with React 19, TypeScript, Zustand in an Nx monorepo.',
+    stack: ['React 19', 'TypeScript', 'Zustand', 'Nx', 'Vite', 'Vitest'],
+    status: 'Professional',
+    color: '#00f5ff',
+    icon: '💊',
+  },
+  {
+    title: 'Notification Center',
+    description: 'Micro-frontend notification hub aggregating product-level alerts with GraphQL, bulk edit capabilities, AEM multilingual support and analytics integration.',
+    stack: ['React', 'GraphQL', 'SASS', 'Micro-Frontend', 'AEM'],
+    status: 'Professional',
+    color: '#ff00aa',
+    icon: '🔔',
+  },
+  {
+    title: 'Alert Widget + Dashboard',
+    description: 'Modular Alert Widget via Webpack Module Federation enabling cross-app integration, plus a feature-rich Alert Management Dashboard for notification preferences.',
+    stack: ['React', 'Webpack MF', 'Context API', 'React Router'],
+    status: 'Professional',
+    color: '#ffe600',
+    icon: '⚡',
+  },
+ 
+]
+
+export const education = [
+  {
+    institution: 'JNTUH College of Engineering Sultanpur',
+    location: 'Sangareddy, Telangana, India',
+    degree: 'Bachelor of Technology',
+    field: 'Electronics and Communications',
+    period: 'Aug 2015 - May 2019',
+    color: '#00f5ff',
+    icon: '🎓',
+  },
+  {
+    institution: 'Narayana Junior College',
+    location: 'Hyderabad, India',
+    degree: 'Intermediate',
+    field: '11th & 12th Grade',
+    period: 'June 2013 - Mar 2015',
+    color: '#ff00aa',
+    icon: '📚',
+  },
+  {
+    institution: 'Bhashyam Public School',
+    location: 'Hyderabad, India',
+    degree: 'Secondary School Certificate',
+    field: 'SSC',
+    period: 'June 2012 - Apr 2013',
+    color: '#ffe600',
+    icon: '🏫',
+  },
+]
