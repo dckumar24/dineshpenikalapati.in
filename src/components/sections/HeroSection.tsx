@@ -7,6 +7,9 @@ import FloatingGeometry from '../three/FloatingGeometry'
 import { profileData } from '../../data/portfolio'
 import yourPhoto from '../../../assets/myphoto_nobg.webp'
 
+
+const isMobile = window.innerWidth < 1024
+
 const roles = [
   'Senior Frontend Developer',
   'React + TypeScript Expert',
@@ -51,17 +54,19 @@ export default function HeroSection() {
     <section id="hero" className="relative w-full min-h-screen overflow-hidden hex-bg">
 
       {/* 3D Canvas Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0" style={{ pointerEvents: isMobile ? 'none' : 'auto' }}>
         <Canvas camera={{ position: [0, 0, 8], fov: 60 }}>
-          <ParticleField count={1800} />
+           <ParticleField count={isMobile ? 600 : 1800} /> {/* fewer particles on mobile */}
           <FloatingGeometry />
-          <OrbitControls
-            enableZoom={false}
-            enablePan={true}
-            autoRotate={false}
-            maxPolarAngle={Math.PI / 1.8}
-            minPolarAngle={Math.PI / 3}
-          />
+          {!isMobile && (
+      <OrbitControls
+        enableZoom={false}
+        enablePan={true}
+        autoRotate={false}
+        maxPolarAngle={Math.PI / 1.8}
+        minPolarAngle={Math.PI / 3}
+      />
+    )}
         </Canvas>
       </div>
 
