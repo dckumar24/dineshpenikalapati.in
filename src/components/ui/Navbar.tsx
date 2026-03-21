@@ -3,13 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 import AnimatedLogo from './AnimatedLogo'
 
 const navItems = [
-  { label: 'HOME', href: '#hero' },
-  { label: 'ABOUT', href: '#about' },
-  { label: 'SKILLS', href: '#skills' },
-  { label: 'EXPERIENCE', href: '#experience' },
-  { label: 'PROJECTS', href: '#projects' },
-  {label:'EDUCATION', href:'#education'},
-  { label: 'CONTACT', href: '#contact' },
+  { label: 'HOME', href: 'hero' },
+  { label: 'ABOUT', href: 'about' },
+  { label: 'SKILLS', href: 'skills' },
+  { label: 'EXPERIENCE', href: 'experience' },
+  { label: 'PROJECTS', href: 'projects' },
+  {label:'EDUCATION', href:'education'},
+  { label: 'CONTACT', href: 'contact' },
 ]
 
 export default function Navbar() {
@@ -23,10 +23,26 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const scrollToSection = (href: string) => {
+  const el = document.getElementById(href)
+
+if (el) {
+
+  window.scrollTo({
+     top:el.getBoundingClientRect().top + window.scrollY ,
+    behavior: 'smooth',
+  })
+ // slight delay to allow menu to close
+  }
+}
+
   const handleNav = (label: string, href: string) => {
     setActive(label)
     setMenuOpen(false)
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+    // document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+    // ✅ More reliable on mobile
+      setTimeout(() => scrollToSection(href), 100)
+
   }
 
   return (
