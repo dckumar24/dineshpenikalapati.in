@@ -2,8 +2,8 @@ export const profileData = {
   name: 'Dinesh Kumar',
   lastName: 'Penikalapati',
   title: 'Senior Frontend Developer',
-  subtitle: 'React · TypeScript · Nx · Three.js',
-  bio: "I'm a Senior Frontend Developer with 6+ years of experience crafting enterprise-scale web applications. I specialise in React 19, TypeScript, Zustand, and Nx monorepo architectures across healthcare and BFS domains. I leverage AI-assisted tools like GitHub Copilot and Windsurf IDE to ship faster, higher-quality code.",
+  subtitle: 'React · TypeScript · Nx Monorepos · AI-assisted Development',
+  bio: "I'm a Senior Frontend Developer with 6+ years of experience crafting enterprise-scale web applications. I specialise in React, TypeScript/JavaScript, Redux, Zustand, and Nx monorepo architectures across healthcare and BFS domains. I leverage AI-assisted tools like GitHub Copilot and Windsurf IDE to ship faster, higher-quality code.",
   location: 'Hyderabad, Telangana, India',
   email: 'dineshpenikalapati@gmail.com',
   phone: '+91 8790351056',
@@ -29,9 +29,10 @@ export const skills = [
   { name: 'GraphQL', description: 'Query language and runtime for APIs enabling efficient data fetching, real-time subscriptions, and schema-driven development', category: 'API', color: '#e10098' },
   { name: 'RESTful APIs', description: 'REST architecture expertise including resource design, HTTP methods, status codes, and API integration patterns', category: 'API', color: '#ff00aa' },
   { name: 'GitHub Copilot', description: 'AI-powered code assistant leveraging large language models for intelligent code completion and generation', category: 'AI Tools', color: '#ffe600' },
-  { name: 'Three.js / R3F', description: 'WebGL abstraction libraries for creating immersive 3D graphics, animations, and spatial visualizations in the browser', category: 'Creative', color: '#00f5ff' },
   { name: 'Python', description: 'General-purpose language for scripting, automation, data processing, and backend development with extensive libraries', category: 'Language', color: '#3572A5' },
   { name: 'Git', description: 'Version control mastery including branching strategies, rebasing, squashing, and collaborative workflows for team development', category: 'Tools', color: '#f05032' },
+  {name:'Windsurf IDE', description: 'AI-assisted development environment with code generation, refactoring, and intelligent suggestions to boost productivity', category: 'AI Tools', color: '#00f5ff' },
+  {name:'SonarQube', description: 'Code quality and security analysis tool for identifying bugs, vulnerabilities, and code smells in projects', category: 'Tools', color: '#cddc39' },
 ]
 
 export const experiences = [
@@ -49,7 +50,7 @@ export const experiences = [
       'Integrated RESTful APIs for real-time inventory, NDC management & prescription workflows',
       'Improved test coverage to 85%+ using Vitest & React Testing Library in Nx monorepo',
     ],
-    stack: ['React 19', 'TypeScript', 'Zustand', 'Nx', 'Vite', 'Vitest', 'RTL', 'JFrog'],
+    stack: ['React', 'TypeScript', 'Zustand', 'Nx', 'Vite', 'Vitest', 'RTL', 'JFrog'],
   },
   {
     company: 'Cognizant',
@@ -65,7 +66,7 @@ export const experiences = [
       'Integrated AEM content for multilingual support; added analytics for customer insights',
       'Wrote comprehensive unit test suites using Jest & React Testing Library',
     ],
-    stack: ['React', 'TypeScript', 'Webpack MF', 'GraphQL', 'AEM', 'SASS', 'Jest', 'RTL', 'Context API'],
+    stack: ['React', 'TypeScript','Redux', 'Webpack MF', 'GraphQL', 'AEM', 'SASS', 'Jest', 'RTL', 'Context API'],
   },
   {
     company: 'Tata Consultancy Services',
@@ -87,7 +88,7 @@ export const projects = [
   {
     title: 'Pharmacy Drug Management System',
     description: 'Enterprise-scale pharmacy platform supporting drug dispensing, inventory management, and prescription workflows. Built with React 19, TypeScript, Zustand in an Nx monorepo.',
-    stack: ['React 19', 'TypeScript', 'Zustand', 'Nx', 'Vite', 'Vitest'],
+    stack: ['React', 'TypeScript', 'Zustand', 'Nx Monorepo', 'Vite', 'Vitest'],
     status: 'Professional',
     color: '#00f5ff',
     icon: '💊',
@@ -95,7 +96,7 @@ export const projects = [
   {
     title: 'Notification Center',
     description: 'Micro-frontend notification hub aggregating product-level alerts with GraphQL, bulk edit capabilities, AEM multilingual support and analytics integration.',
-    stack: ['React', 'GraphQL', 'SASS', 'Micro-Frontend', 'AEM'],
+    stack: ['React','JavaScript/TypeScript','Context API', 'GraphQL', 'SASS', 'Micro-Frontend', 'AEM'],
     status: 'Professional',
     color: '#ff00aa',
     icon: '🔔',
@@ -103,7 +104,7 @@ export const projects = [
   {
     title: 'Alert Widget + Dashboard',
     description: 'Modular Alert Widget via Webpack Module Federation enabling cross-app integration, plus a feature-rich Alert Management Dashboard for notification preferences.',
-    stack: ['React', 'Webpack MF', 'Context API', 'React Router'],
+    stack: ['React', 'JavaScript','Redux','Webpack MF', 'Context API', 'React Router'],
     status: 'Professional',
     color: '#ffe600',
     icon: '⚡',
