@@ -1,64 +1,41 @@
+import tailwindcssAnimate from 'tailwindcss-animate'
+
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
-        orbitron: ['Orbitron', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['Sora', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['Fraunces', 'Georgia', 'ui-serif', 'serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       colors: {
-        cyber: {
-          black: '#020408',
-          dark: '#060d14',
-          cyan: '#00f5ff',
-          magenta: '#ff00aa',
-          yellow: '#ffe600',
-          green: '#00ff9f',
-          gray: '#1a2332',
-          border: '#0a1628',
-        }
+        bg: 'rgb(var(--bg) / <alpha-value>)',
+        surface: 'rgb(var(--surface) / <alpha-value>)',
+        border: 'rgb(var(--border) / <alpha-value>)',
+        text: 'rgb(var(--text) / <alpha-value>)',
+        muted: 'rgb(var(--text-muted) / <alpha-value>)',
+        accent: 'rgb(var(--accent) / <alpha-value>)',
+        bloom: 'rgb(var(--bloom) / <alpha-value>)',
+        dusk: 'rgb(var(--dusk) / <alpha-value>)',
       },
       animation: {
-        'glitch': 'glitch 3s infinite',
-        'scanline': 'scanline 8s linear infinite',
-        'flicker': 'flicker 4s infinite',
-        'pulse-cyan': 'pulse-cyan 2s ease-in-out infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'border-flow': 'border-flow 3s linear infinite',
+        blink: 'blink 1s step-end infinite',
+        'fade-up': 'fade-up 0.6s ease-out forwards',
       },
       keyframes: {
-        glitch: {
-          '0%, 90%, 100%': { transform: 'translate(0)', filter: 'none' },
-          '92%': { transform: 'translate(-2px, 1px)', filter: 'hue-rotate(90deg)' },
-          '94%': { transform: 'translate(2px, -1px)', filter: 'hue-rotate(-90deg)' },
-          '96%': { transform: 'translate(-1px, 2px)', filter: 'none' },
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
         },
-        scanline: {
-          '0%': { transform: 'translateY(-100%)' },
-          '100%': { transform: 'translateY(100vh)' },
+        'fade-up': {
+          '0%': { opacity: '0', transform: 'translateY(16px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        flicker: {
-          '0%, 95%, 100%': { opacity: '1' },
-          '96%': { opacity: '0.8' },
-          '97%': { opacity: '1' },
-          '98%': { opacity: '0.6' },
-          '99%': { opacity: '1' },
-        },
-        'pulse-cyan': {
-          '0%, 100%': { boxShadow: '0 0 5px #00f5ff, 0 0 10px #00f5ff' },
-          '50%': { boxShadow: '0 0 20px #00f5ff, 0 0 40px #00f5ff, 0 0 60px #00f5ff' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        'border-flow': {
-          '0%': { backgroundPosition: '0% 50%' },
-          '100%': { backgroundPosition: '200% 50%' },
-        },
-      }
+      },
     },
   },
-  plugins: [],
+  plugins: [tailwindcssAnimate],
 }

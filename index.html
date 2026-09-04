@@ -1,37 +1,49 @@
 <!doctype html>
 <html lang="en">
   <head>
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JWH0F3L29D"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWH0F3L29D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JWH0F3L29D');
+    </script>
 
-  gtag('config', 'G-JWH0F3L29D');
-</script>
-   <meta charset="UTF-8">
-   <title>Dinesh Kumar Penikalapati — Senior Frontend Developer</title>
-    <meta name="description" content="" />
+    <!-- Sets the theme class before first paint to avoid a flash of the wrong theme -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var dark = stored ? stored === 'dark' : !window.matchMedia('(prefers-color-scheme: light)').matches;
+          document.documentElement.classList.toggle('dark', dark);
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+
+    <meta charset="UTF-8">
+    <title>Dinesh Kumar Penikalapati — Senior Frontend Developer</title>
     <meta name="author" content="Dinesh Kumar Penikalapati" />
     <meta name="description" content="Dinesh Kumar Penikalapati is a Senior Frontend Developer with 7+ years building enterprise-scale web applications using React, TypeScript, and modern frontend architectures.">
     <meta name="keywords" content="Frontend Developer, React.js, Redux, JavaScript, TypeScript, SASS, Webpack, Agile Development, GitHub Copilot, Micro Frontends, API Orchestration, AEM Integration, Performance Optimization, Analytics">
     <meta property="og:title" content="Dinesh Kumar Penikalapati — Senior Frontend Developer">
-    <meta property="og:description" content="Dinesh Kumar Penikalapati is a Senior Frontend Developer with 6+ years building enterprise-scale web applications using React, TypeScript, and modern frontend architectures.">
-    <meta property="og:image" content="/assets/circle-favicon.webp">
-    <meta property="og:url" content="https://dineshpenikalapati.com/">
+    <meta property="og:description" content="Dinesh Kumar Penikalapati is a Senior Frontend Developer with 7+ years building enterprise-scale web applications using React, TypeScript, and modern frontend architectures.">
+    <meta property="og:image" content="/circle-favicon.webp">
+    <meta property="og:url" content="https://dineshpenikalapati.in/">
     <meta property="og:type" content="profile">
     <meta property="og:site_name" content="Dinesh Kumar Penikalapati">
-    <meta name="twitter:card" content="/assets/circle-favicon.webp">
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Dinesh Kumar Penikalapati — Senior Frontend Developer">
-    <meta name="twitter:description" content="Dinesh Kumar Penikalapati is a Senior Frontend Developer with 6+ years building enterprise-scale web applications using React, TypeScript, and modern frontend architectures.">
-    <meta name="twitter:image" content="/assets/circle-favicon.webp">
-    <link rel="icon" type="image/png" href="/assets/circle-favicon.webp" />
+    <meta name="twitter:description" content="Dinesh Kumar Penikalapati is a Senior Frontend Developer with 7+ years building enterprise-scale web applications using React, TypeScript, and modern frontend architectures.">
+    <meta name="twitter:image" content="/circle-favicon.webp">
+    <link rel="icon" type="image/png" href="/circle-favicon.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,500..700&family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>

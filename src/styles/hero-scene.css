@@ -1,0 +1,61 @@
+/*
+ * Hero scene — every layer here animates only `transform`/`opacity`
+ * (GPU-compositable, no layout/paint cost) via plain CSS keyframes. No
+ * canvas, no WebGL, no JS animation loop. The global prefers-reduced-motion
+ * rule in index.css freezes all of this to a single frame automatically.
+ *
+ * The sky itself no longer transitions over time — it's a fixed sunset
+ * scene in light mode and a fixed starry-night scene in dark mode, switched
+ * by the site's theme toggle. Everything below is just small ambient life
+ * within whichever scene is showing (clouds drifting, birds fluttering,
+ * stars twinkling).
+ */
+
+@keyframes hero-twinkle {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 1; }
+}
+
+@keyframes hero-cloud-drift {
+  0%, 100% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+}
+
+@keyframes hero-bird-flutter {
+  0%, 100% { transform: translate(0, 4px); }
+  50% { transform: translate(26px, -8px); }
+}
+
+@keyframes hero-bird-flap {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.5); }
+}
+
+@keyframes hero-comet {
+  0% { transform: translate(0, 0) rotate(-35deg); opacity: 0; }
+  1% { opacity: 1; }
+  7% { transform: translate(-260px, 190px) rotate(-35deg); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes hero-flower-sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+.hero-star-twinkle { animation: hero-twinkle 4s ease-in-out infinite; }
+
+.hero-cloud { animation: hero-cloud-drift ease-in-out infinite; }
+.hero-cloud-1 { animation-duration: 9s; }
+.hero-cloud-2 { animation-duration: 12s; animation-delay: -3s; }
+.hero-cloud-3 { animation-duration: 10s; animation-delay: -6s; }
+
+.hero-bird { animation: hero-bird-flutter ease-in-out infinite; }
+.hero-bird-1 { animation-duration: 5s; animation-delay: 0s; }
+.hero-bird-2 { animation-duration: 6s; animation-delay: -2s; }
+.hero-bird-3 { animation-duration: 5.5s; animation-delay: -3.5s; }
+.hero-bird-wing { animation: hero-bird-flap 0.5s ease-in-out infinite; transform-origin: center; }
+
+.hero-comet { animation-name: hero-comet; animation-timing-function: linear; animation-iteration-count: infinite; }
+
+.hero-flower { animation: hero-flower-sway ease-in-out infinite; transform-origin: bottom center; }

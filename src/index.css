@@ -1,0 +1,75 @@
+@import './styles/hero-scene.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* sunset — day (fallback when JS is disabled / before hydration) */
+  --bg: 255 246 234;
+  --surface: 255 251 243;
+  --border: 240 221 192;
+  --text: 43 27 16;
+  --text-muted: 138 111 88;
+  --accent: 217 123 41;
+  --bloom: 232 93 63;
+  --dusk: 139 58 98;
+}
+
+.dark {
+  /* sunset — night */
+  --bg: 11 16 38;
+  --surface: 22 27 58;
+  --border: 42 47 85;
+  --text: 243 236 224;
+  --text-muted: 156 154 184;
+  --accent: 242 193 78;
+  --bloom: 244 128 90;
+  --dusk: 185 139 201;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light dark;
+  }
+
+  body {
+    @apply text-text font-sans antialiased;
+    /* Light theme carries the sunset warmth through the whole page — a slow
+       drift from morning cream to dusk rose across the page's full height.
+       Dark theme stays a flat night navy (below), matching the Hero. */
+    background: linear-gradient(180deg, #fff6ea 0%, #ffeedd 30%, #fce2d9 62%, #f6d3d9 100%);
+  }
+
+  .dark body {
+    background: rgb(var(--bg));
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-text;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
