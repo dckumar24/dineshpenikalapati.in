@@ -37,6 +37,11 @@ export function Footer() {
             </li>
           ))}
         </ul>
+         <div className="flex items-center gap-2">
+          <span className="text-sm text-muted">
+            Made with love and keyboard.
+          </span>
+        </div>
       </div>
     </footer>
   )

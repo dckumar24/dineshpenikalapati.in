@@ -7,7 +7,7 @@ import { profile } from '@/data/portfolio'
 
 const channels = [
   { href: `mailto:${profile.email}`, label: profile.email, icon: Mail },
-  { href: profile.linkedin, label: 'linkedin.com/in/dineshpenikalapati', icon: LinkedInIcon },
+  { href: profile.linkedin, label: 'dineshpenikalapati', icon: LinkedInIcon },
   { href: `tel:${profile.phone.replace(/\s+/g, '')}`, label: profile.phone, icon: Phone },
 ]
 

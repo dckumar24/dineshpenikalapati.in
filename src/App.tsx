@@ -1,6 +1,7 @@
 import { Navbar } from '@/components/layout/Navbar'
 import { Hero } from '@/components/sections/Hero'
 import { LazySection } from '@/components/ui/LazySection'
+import { WebVitalsBadge } from '@/components/ui/WebVitalsBadge'
 
 /**
  * Navbar + Hero ship in the main bundle — they're above the fold and own the
@@ -51,6 +52,10 @@ function App() {
         minHeight={69}
         load={() => import('@/components/layout/Footer').then((m) => ({ default: m.Footer }))}
       />
+      {/* Not gated by LazySection: it measures the page's own load, so it has
+          to be mounted from the start — see useWebVitals for how it still
+          keeps that off the critical path. */}
+      <WebVitalsBadge />
     </div>
   )
 }
