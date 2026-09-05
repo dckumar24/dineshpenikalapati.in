@@ -1,6 +1,7 @@
 import { Mail, Phone } from 'lucide-react'
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import { LinkedInIcon } from '@/components/icons/LinkedInIcon'
 import { Reveal } from '@/components/ui/Reveal'
+import { ResumeButton } from '@/components/ui/ResumeButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { profile } from '@/data/portfolio'
 
@@ -32,20 +33,14 @@ export function Contact() {
                 rel={href.startsWith('http') ? 'noreferrer' : undefined}
                 className="flex items-center gap-3 rounded-lg border border-border bg-surface px-4 py-3 text-sm text-text transition-colors hover:border-accent/50"
               >
-                <Icon className="h-4 w-4 shrink-0 text-bloom" style={{ fontSize: 16 }} aria-hidden="true" />
+                <Icon className="h-4 w-4 shrink-0 text-bloom" aria-hidden="true" />
                 <span className="font-mono">{label}</span>
               </a>
             </li>
           ))}
         </ul>
 
-        <a
-          href={profile.resumeUrl}
-          download
-          className="mt-8 inline-block rounded-full bg-accent px-6 py-3 text-sm font-medium text-white transition-transform hover:scale-[1.03] active:scale-[0.98] dark:text-[#2B1B10]"
-        >
-          Download résumé
-        </a>
+        <ResumeButton variant="solidLarge">Download résumé</ResumeButton>
       </Reveal>
     </section>
   )

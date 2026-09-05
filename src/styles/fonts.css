@@ -1,0 +1,56 @@
+/* Self-hosted, latin-subset only. Serving these from our own origin removes two
+   third-party round trips (fonts.googleapis.com for the CSS, then
+   fonts.gstatic.com for the files) from the critical path. Only the weights the
+   markup actually uses are shipped: 400/500/600 — nothing here renders at 700.
+   Sora 400 and Playfair 600 are preloaded in index.html; the rest download only
+   when an element that needs them renders. */
+
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Sora-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/Sora-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/Sora-600.woff2') format('woff2');
+}
+
+/* Variable across 600-700; section headings render it at 600. */
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 600 700;
+  font-display: swap;
+  src: url('/fonts/Fraunces-600700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/JetBrainsMono-400.woff2') format('woff2');
+}
+
+/* Hero name only. */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/PlayfairDisplay-600.woff2') format('woff2');
+}

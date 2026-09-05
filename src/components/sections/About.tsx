@@ -10,12 +10,16 @@ export function About() {
         <Reveal className="mx-auto w-full max-w-sm lg:mx-0">
           <div className="overflow-hidden rounded-3xl border border-border bg-surface p-2 shadow-lg">
             <img
-              src="/heroImage.png"
+              src="/heroImage-384.webp"
+              srcSet="/heroImage-384.webp 384w, /heroImage-480.webp 480w, /heroImage-640.webp 640w, /heroImage-768.webp 768w, /heroImage-960.webp 960w"
+              /* The frame is max-w-sm (384px) less its 8px padding, at every breakpoint. */
+              sizes="368px"
               alt={`${profile.name}, illustrated sitting in a sunflower field`}
               className="h-full w-full rounded-2xl object-cover"
               width={480}
-              height={600}
+              height={640}
               loading="lazy"
+              decoding="async"
             />
           </div>
         </Reveal>

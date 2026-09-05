@@ -3,7 +3,9 @@ import { createContext, useCallback, useContext, useEffect, useState, type React
 type Theme = 'dark' | 'light'
 
 function readInitialTheme(): Theme {
-  if (typeof document === 'undefined') return 'dark'
+  // Light is the default everywhere — dark only when the boot script in
+  // index.html found an explicit stored preference for it.
+  if (typeof document === 'undefined') return 'light'
   return document.documentElement.classList.contains('dark') ? 'dark' : 'light'
 }
 

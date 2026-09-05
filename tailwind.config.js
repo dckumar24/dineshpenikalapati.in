@@ -10,6 +10,8 @@ export default {
         sans: ['Sora', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         serif: ['Fraunces', 'Georgia', 'ui-serif', 'serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        /* reserved for the name in the hero — deliberately not Fraunces */
+        display: ['"Playfair Display"', 'Fraunces', 'Georgia', 'ui-serif', 'serif'],
       },
       colors: {
         bg: 'rgb(var(--bg) / <alpha-value>)',

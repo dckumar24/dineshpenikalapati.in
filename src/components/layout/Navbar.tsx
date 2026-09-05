@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Logo } from '@/components/layout/Logo'
 import { ThemeToggle } from '@/components/layout/ThemeToggle'
+import { ResumeButton } from '@/components/ui/ResumeButton'
 import { profile } from '@/data/portfolio'
 
 const links = [
@@ -19,7 +20,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-border bg-bg/80 backdrop-blur">
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-accent focus:px-3 focus:py-2 focus:text-white"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-accent focus:px-3 focus:py-2 focus:text-[#2B1B10]"
       >
         Skip to content
       </a>
@@ -39,13 +40,7 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <a
-            href={profile.resumeUrl}
-            download
-            className="rounded-full bg-accent px-4 py-2 text-sm font-medium text-white transition-transform hover:scale-[1.03] active:scale-[0.98] dark:text-[#2B1B10]"
-          >
-            Résumé
-          </a>
+          <ResumeButton />
           <ThemeToggle />
         </div>
 
@@ -74,13 +69,7 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <a
-            href={profile.resumeUrl}
-            download
-            className="mt-4 block rounded-full bg-accent px-4 py-2 text-center text-sm font-medium text-white dark:text-[#2B1B10]"
-          >
-            Résumé
-          </a>
+          <ResumeButton variant="block" />
         </div>
       )}
     </header>

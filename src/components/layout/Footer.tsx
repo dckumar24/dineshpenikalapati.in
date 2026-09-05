@@ -1,6 +1,6 @@
 import { Mail, Phone } from 'lucide-react'
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import GitHubIcon from '@mui/icons-material/GitHub'
+import { LinkedInIcon } from '@/components/icons/LinkedInIcon'
+import { GitHubIcon } from '@/components/icons/GitHubIcon'
 import { Logo } from '@/components/layout/Logo'
 import { profile } from '@/data/portfolio'
 
@@ -14,9 +14,9 @@ const socials = [
 export function Footer() {
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 px-6 py-10 sm:flex-row sm:justify-between">
+      <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 px-6 py-4 sm:flex-row sm:justify-between">
         <div className="flex items-center gap-2">
-          <Logo className="h-5 w-5" />
+          <Logo className="h-8 w-8" />
           <span className="text-sm text-muted">
             © {new Date().getFullYear()} {profile.name}
           </span>
@@ -32,7 +32,7 @@ export function Footer() {
                 aria-label={label}
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-accent/50 hover:text-text"
               >
-                <Icon className="h-4 w-4" style={{ fontSize: 16 }} aria-hidden="true" />
+                <Icon className="h-5 w-5" aria-hidden="true" />
               </a>
             </li>
           ))}

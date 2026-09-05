@@ -1,52 +1,123 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWH0F3L29D"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-JWH0F3L29D');
-    </script>
-
-    <!-- Sets the theme class before first paint to avoid a flash of the wrong theme -->
+    <!-- Light is the default. Dark applies only when the visitor explicitly
+         chose it before, and the class lands before first paint so there is no
+         flash of the wrong theme. -->
     <script>
       (function () {
         try {
-          var stored = localStorage.getItem('theme');
-          var dark = stored ? stored === 'dark' : !window.matchMedia('(prefers-color-scheme: light)').matches;
-          document.documentElement.classList.toggle('dark', dark);
+          if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+          }
         } catch (e) {
-          document.documentElement.classList.add('dark');
+          /* storage blocked (private mode) — stay on the light default */
         }
       })();
     </script>
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dinesh Kumar Penikalapati — Senior Frontend Developer</title>
     <meta name="author" content="Dinesh Kumar Penikalapati" />
     <meta name="description" content="Dinesh Kumar Penikalapati is a Senior Frontend Developer with 7+ years building enterprise-scale web applications using React, TypeScript, and modern frontend architectures.">
     <meta name="keywords" content="Frontend Developer, React.js, Redux, JavaScript, TypeScript, SASS, Webpack, Agile Development, GitHub Copilot, Micro Frontends, API Orchestration, AEM Integration, Performance Optimization, Analytics">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <!-- The site answers on both the .in domain and the .web.app Firebase URL;
+         this keeps them from competing as duplicates. -->
+    <link rel="canonical" href="https://dineshpenikalapati.in/">
+
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff6ea">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1026">
+
     <meta property="og:title" content="Dinesh Kumar Penikalapati — Senior Frontend Developer">
     <meta property="og:description" content="Dinesh Kumar Penikalapati is a Senior Frontend Developer with 7+ years building enterprise-scale web applications using React, TypeScript, and modern frontend architectures.">
-    <meta property="og:image" content="/circle-favicon.webp">
+    <meta property="og:image" content="https://dineshpenikalapati.in/heroImage-960.webp">
+    <meta property="og:image:alt" content="Dinesh Kumar Penikalapati, illustrated sitting in a sunflower field">
     <meta property="og:url" content="https://dineshpenikalapati.in/">
     <meta property="og:type" content="profile">
     <meta property="og:site_name" content="Dinesh Kumar Penikalapati">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Dinesh Kumar Penikalapati — Senior Frontend Developer">
     <meta name="twitter:description" content="Dinesh Kumar Penikalapati is a Senior Frontend Developer with 7+ years building enterprise-scale web applications using React, TypeScript, and modern frontend architectures.">
-    <meta name="twitter:image" content="/circle-favicon.webp">
-    <link rel="icon" type="image/png" href="/circle-favicon.webp" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="twitter:image" content="https://dineshpenikalapati.in/heroImage-960.webp">
+    <link rel="icon" type="image/webp" href="/circle-favicon.webp" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,500..700&family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet" />
+    <!-- Fonts are self-hosted (src/styles/fonts.css). Only the two faces the
+         hero paints with are preloaded; the rest fetch on demand. -->
+    <link rel="preload" href="/fonts/PlayfairDisplay-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Sora-400.woff2" as="font" type="font/woff2" crossorigin />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dinesh Kumar Penikalapati",
+        "jobTitle": "Senior Frontend Developer",
+        "description": "Senior Frontend Developer with 7+ years building enterprise-scale web applications using React, TypeScript, and modern frontend architectures.",
+        "url": "https://dineshpenikalapati.in/",
+        "image": "https://dineshpenikalapati.in/heroImage-960.webp",
+        "email": "mailto:dineshpenikalapati@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Hyderabad",
+          "addressRegion": "Telangana",
+          "addressCountry": "IN"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/dineshpenikalapati/",
+          "https://github.com/dckumar24"
+        ],
+        "worksFor": { "@type": "Organization", "name": "Infosys" },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "JNTUH College of Engineering Sultanpur"
+        },
+        "knowsAbout": [
+          "React",
+          "TypeScript",
+          "JavaScript",
+          "Redux",
+          "Micro Frontends",
+          "Frontend Architecture",
+          "Web Performance",
+          "Tailwind CSS"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- gtag.js is ~170 KB and costs ~220 ms of main-thread time — on its own,
+         more blocking time than the entire app. So it loads on the visitor's
+         first interaction, or after 10 s for someone who just reads. Trade-off:
+         a visit that leaves inside 10 s without interacting isn't counted. -->
+    <script>
+      (function () {
+        var started = false;
+        var events = ['pointerdown', 'keydown', 'scroll', 'touchstart'];
+
+        function loadAnalytics() {
+          if (started) return;
+          started = true;
+          events.forEach(function (e) { window.removeEventListener(e, loadAnalytics); });
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JWH0F3L29D';
+          document.head.appendChild(s);
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () { window.dataLayer.push(arguments); };
+          window.gtag('js', new Date());
+          window.gtag('config', 'G-JWH0F3L29D');
+        }
+
+        events.forEach(function (e) {
+          window.addEventListener(e, loadAnalytics, { once: true, passive: true });
+        });
+        setTimeout(loadAnalytics, 10000);
+      })();
+    </script>
   </body>
 </html>

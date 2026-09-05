@@ -1,0 +1,78 @@
+/* Hero name + hero entrance choreography.
+   All CSS-only: no JS animation loop, only transform/opacity so it stays on the
+   compositor. The hidden start state lives inside the 0% keyframe (never on the
+   base element), so if the animation is disabled the letters simply sit in their
+   resting, readable state. */
+
+.name-reveal {
+  display: inline;
+}
+
+/* Keeps a name from breaking mid-word when the hero column narrows. */
+.name-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.name-letter {
+  display: inline-block;
+  animation: name-letter-in 400ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: calc(var(--i) * 20ms);
+}
+
+/* Entrance lives on the outer span, hover on the inner one — a CSS animation
+   would otherwise win over the hover transition on the same element. */
+.name-letter-inner {
+  display: inline-block;
+  transition:
+    transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    color 220ms ease;
+}
+
+.name-letter:hover .name-letter-inner {
+  transform: translateY(-0.14em) rotate(-7deg);
+  color: #f2c14e;
+}
+
+@keyframes name-letter-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0.55em, 0) rotate(-6deg) scale(0.86);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0) scale(1);
+  }
+}
+
+/* Rest of the hero, staggered in behind the name via --d. Delays are kept short
+   on purpose: the tagline is the LCP element, and an element animating up from
+   opacity 0 doesn't count as painted until its delay has elapsed. */
+.hero-enter {
+  animation: hero-enter-up 450ms ease-out both;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes hero-enter-up {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* The global reduced-motion rule collapses durations but not delays, which would
+   leave delayed elements invisible mid-stagger — so drop the animation outright. */
+@media (prefers-reduced-motion: reduce) {
+  .name-letter,
+  .hero-enter {
+    animation: none;
+  }
+
+  .name-letter-inner {
+    transition: none;
+  }
+}

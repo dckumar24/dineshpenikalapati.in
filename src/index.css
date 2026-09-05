@@ -1,4 +1,6 @@
+@import './styles/fonts.css';
 @import './styles/hero-scene.css';
+@import './styles/name-reveal.css';
 
 @tailwind base;
 @tailwind components;
