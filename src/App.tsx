@@ -1,38 +1,44 @@
 import { Navbar } from '@/components/layout/Navbar'
 import { Hero } from '@/components/sections/Hero'
 import { LazySection } from '@/components/ui/LazySection'
-import { WebVitalsBadge } from '@/components/ui/WebVitalsBadge'
 
 /**
  * Navbar + Hero ship in the main bundle — they're above the fold and own the
  * LCP. Everything below is a separate chunk that only downloads once it nears
- * the viewport (see LazySection). minHeight values are the real desktop heights
- * measured at 1280px, so the swap-in costs no layout shift.
+ * the viewport (see LazySection).
+ *
+ * minHeightClassName is two tiers, not one number: a mobile value plus the
+ * breakpoint where that section's OWN layout actually changes column count
+ * (`lg:` for About — its grid only collapses at 1024px; `sm:` for the rest,
+ * which switch at 640px). Both tiers are real measurements (390px-wide and
+ * 1280px-wide iframes against production), rounded up ~20-50px for headroom,
+ * not estimates — a single desktop number here is what produced a 0.353
+ * mobile CLS after the previous deploy.
  */
 const sections = [
   {
     id: 'about',
-    minHeight: 996,
+    minHeightClassName: 'min-h-[1900px] lg:min-h-[1000px]',
     load: () => import('@/components/sections/About').then((m) => ({ default: m.About })),
   },
   {
     id: 'skills',
-    minHeight: 685,
+    minHeightClassName: 'min-h-[1260px] sm:min-h-[700px]',
     load: () => import('@/components/sections/Skills').then((m) => ({ default: m.Skills })),
   },
   {
     id: 'experience',
-    minHeight: 1487,
+    minHeightClassName: 'min-h-[2650px] sm:min-h-[1500px]',
     load: () => import('@/components/sections/Experience').then((m) => ({ default: m.Experience })),
   },
   {
     id: 'education',
-    minHeight: 422,
+    minHeightClassName: 'min-h-[570px] sm:min-h-[430px]',
     load: () => import('@/components/sections/Education').then((m) => ({ default: m.Education })),
   },
   {
     id: 'contact',
-    minHeight: 656,
+    minHeightClassName: 'min-h-[730px] sm:min-h-[660px]',
     load: () => import('@/components/sections/Contact').then((m) => ({ default: m.Contact })),
   },
 ]
@@ -49,13 +55,9 @@ function App() {
       </main>
       <LazySection
         id="site-footer"
-        minHeight={69}
+        minHeightClassName="min-h-[190px] sm:min-h-[75px]"
         load={() => import('@/components/layout/Footer').then((m) => ({ default: m.Footer }))}
       />
-      {/* Not gated by LazySection: it measures the page's own load, so it has
-          to be mounted from the start — see useWebVitals for how it still
-          keeps that off the critical path. */}
-      <WebVitalsBadge />
     </div>
   )
 }

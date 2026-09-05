@@ -5,8 +5,18 @@ interface LazySectionProps {
   /** The section's anchor id — lives on the placeholder too, so navbar links
    *  still resolve to a section whose chunk hasn't downloaded yet. */
   id: string
-  /** Reserved height (px, desktop-measured) so the swap-in costs no layout shift. */
-  minHeight: number
+  /**
+   * Reserved height, as Tailwind `min-h-[...]` utilities — NOT a single
+   * desktop number. Real section heights vary a lot with viewport width (text
+   * reflow, grids collapsing to one column), so this is normally two tiers:
+   * a mobile value plus the section's own responsive prefix for the point
+   * where its layout actually changes (`sm:` for most sections, `lg:` for
+   * About, which only drops to one column at that breakpoint). Getting this
+   * wrong is exactly what caused a 0.353 mobile CLS in production — the
+   * placeholder was a single number measured at 1280px, so on a phone the
+   * real content swapped in 500-1100px taller than what was reserved.
+   */
+  minHeightClassName: string
   load: () => Promise<{ default: ComponentType }>
 }
 
@@ -17,18 +27,23 @@ interface LazySectionProps {
  * gating that render behind an IntersectionObserver is what keeps the chunk out
  * of the network tab until the user actually scrolls near the section. The
  * 300px rootMargin starts the download just early enough that the section is
- * ready by the time it's on screen.
+ * usually ready by the time it's on screen. It was widened to 600px while
+ * first chasing a mobile CLS regression, but measuring showed the accurate
+ * two-tier reserved height below is what actually fixed it (0.353 → 0.007
+ * either way) — so this stays at 300px rather than keeping an unproven change.
  */
-export function LazySection({ id, minHeight, load }: LazySectionProps) {
+export function LazySection({ id, minHeightClassName, load }: LazySectionProps) {
   const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0, rootMargin: '300px 0px' })
   const targetedByHash = useHashTarget(id)
   // Created once — a lazy() rebuilt on every render would remount the section.
   const [Component] = useState(() => lazy(load))
 
-  if (!inView && !targetedByHash) return <div id={id} ref={ref} style={{ minHeight }} />
+  if (!inView && !targetedByHash) {
+    return <div id={id} ref={ref} className={minHeightClassName} />
+  }
 
   return (
-    <Suspense fallback={<div id={id} style={{ minHeight }} />}>
+    <Suspense fallback={<div id={id} className={minHeightClassName} />}>
       <AnchorAwareSection id={id}>
         <Component />
       </AnchorAwareSection>
